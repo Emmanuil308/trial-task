@@ -6,4 +6,5 @@ import com.plaksin.authservice.model.User;
 public interface UserDtoService {
 
     SavedUserDto saveNewUser(User user);
+    SavedUserDto getUserById(Long userId);
 }

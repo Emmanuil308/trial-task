@@ -3,3 +3,5 @@ databaseChangeLog:
       file: db/changelog/init.sql
   - include:
       file: db/changelog/data/add_quote.sql
+  - include:
+      file: db/changelog/data/add_vote.sql

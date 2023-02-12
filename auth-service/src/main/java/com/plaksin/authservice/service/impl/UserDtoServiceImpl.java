@@ -19,4 +19,9 @@ public class UserDtoServiceImpl implements UserDtoService {
     public SavedUserDto saveNewUser(User user) {
         return userConverter.toSavedUserDtoFromUser(userService.saveNewUser(user));
     }
+
+    @Override
+    public SavedUserDto getUserById(Long userId) {
+        return userConverter.toSavedUserDtoFromUser(userService.getUserById(userId));
+    }
 }

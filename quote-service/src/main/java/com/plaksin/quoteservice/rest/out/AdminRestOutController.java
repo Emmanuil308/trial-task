@@ -1,6 +1,7 @@
 package com.plaksin.quoteservice.rest.out;
 
 import com.plaksin.quoteservice.dto.QuoteDto;
+import com.plaksin.quoteservice.dto.QuoteWithInfoDto;
 import com.plaksin.quoteservice.exception.EntityNotFoundException;
 import com.plaksin.quoteservice.model.Quote;
 import com.plaksin.quoteservice.model.response.Response;
@@ -38,10 +39,10 @@ public class AdminRestOutController {
     }
 
     @GetMapping("/quotes/{quoteId}")
-    public Response<QuoteDto> getQuoteById(@PathVariable("quoteId") Long quoteId) {
+    public Response<QuoteWithInfoDto> getQuoteByIdWithInfo(@PathVariable("quoteId") Long quoteId) {
         Quote quote = quoteService.getQuoteById(quoteId)
                 .orElseThrow(() -> new EntityNotFoundException("Quote not found"));
-        return Response.ok(quoteDtoService.getQuoteById(quote));
+        return Response.ok(quoteDtoService.getQuoteByIdWithInfo(quote));
     }
 
     @DeleteMapping("/quotes/{quoteId}")
@@ -56,9 +57,13 @@ public class AdminRestOutController {
     }
 
     @GetMapping("/quotes/top")
-    public List<QuoteDto> getTopQuotes() {
-        return quoteDtoService.getTopQuotes();
+    public Response<List<QuoteDto>> getTopQuotes() {
+        return Response.ok(quoteDtoService.getTopQuotes());
     }
 
+    @GetMapping("/quotes/worse")
+    public Response<List<QuoteDto>> getWorseQuotes() {
+        return Response.ok(quoteDtoService.getWorseQuotes());
+    }
 
 }

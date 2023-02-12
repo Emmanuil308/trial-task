@@ -7,5 +7,10 @@ VALUES (1, 'inspirational quote 1', 1, current_timestamp - interval '1 23:00:0' 
        (6, 'another inspirational quote 5', 1, current_timestamp - interval '0 15:00:0' DAY TO SECOND),
        (7, 'one more inspirational quote 6', 1, current_timestamp - interval '0 13:00:0' DAY TO SECOND),
        (8, 'one more smart quote3', 2, current_timestamp - interval '0 3:00:0' DAY TO SECOND),
-       (9, 'joke', 3, current_timestamp - interval '0 1:00:0' DAY TO SECOND);
+       (9, 'joke 1', 3, current_timestamp - interval '0 1:00:0' DAY TO SECOND),
+       (10, 'joke 2', 3, current_timestamp - interval '0 1:00:0' DAY TO SECOND),
+       (11, 'joke 3', 3, current_timestamp - interval '0 0:50:0' DAY TO SECOND),
+       (12, 'joke 4', 3, current_timestamp - interval '0 0:45:0' DAY TO SECOND);
+
+
 

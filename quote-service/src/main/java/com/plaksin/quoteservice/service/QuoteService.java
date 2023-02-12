@@ -1,6 +1,5 @@
 package com.plaksin.quoteservice.service;
 
-import com.plaksin.quoteservice.dto.QuoteDto;
 import com.plaksin.quoteservice.model.Quote;
 
 import java.util.List;
@@ -13,4 +12,5 @@ public interface QuoteService {
     Quote getRandomQuote();
     void deleteQuoteById(Long quoteId);
     List<Quote> getTopQuotes();
+    List<Quote> getWorseQuotes();
 }
