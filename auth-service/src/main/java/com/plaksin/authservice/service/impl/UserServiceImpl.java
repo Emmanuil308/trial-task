@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -17,6 +19,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User saveNewUser(User user) {
        user.setPassword(passwordEncoder.encode(user.getPassword()));
+       user.setCreationDate(LocalDate.now());
         return userRepository.save(user);
     }
 
