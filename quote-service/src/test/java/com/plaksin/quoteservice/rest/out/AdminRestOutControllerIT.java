@@ -99,7 +99,7 @@ public class AdminRestOutControllerIT extends ContextIT {
 
     @Test
     @Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, value = "/scripts/rest/out/adminRestController/quote_clear.sql")
-    public void getQuoteById_isBadRequest_test() throws Exception {
+    public void getQuoteByIdWithInfo_isBadRequest_test() throws Exception {
 
         mockMvc.perform(
                 get("/api/quote/admin/quotes/{quoteId}", 888888)
